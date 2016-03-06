@@ -1,0 +1,14 @@
+#!/bin/bash
+
+rsync -himPrtu \
+  --delete-before \
+  --modify-window=2 \
+  -f="+ */" \
+  -f="+ *.mp3" \
+  -f="+ *.flac" \
+  -f="+ *.ogg" \
+  -f="+ *.jpg" \
+  -f="+ *.png" \
+  -f="- *" \
+  ~/music/ /media/DELECTUS/Music/
+

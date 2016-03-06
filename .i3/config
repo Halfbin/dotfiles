@@ -140,7 +140,7 @@ bar {
   }
 }
 
-exec "fish -c \"rk-set-wallpaper\""
+exec rk-set-wallpaper
 exec pasystray
 
 assign [class="^Skype$"] 10
