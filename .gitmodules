@@ -19,3 +19,6 @@
 [submodule ".vim/bundle/i3-vim-syntax"]
 	path = .vim/bundle/i3-vim-syntax
 	url = http://github.com/PotatoesMaster/i3-vim-syntax
+[submodule ".vim/bundle/YouCompleteMe"]
+	path = .vim/bundle/YouCompleteMe
+	url = http://github.com/Valloric/YouCompleteMe.git
