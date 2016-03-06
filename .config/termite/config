@@ -1,0 +1,48 @@
+[options]
+scroll_on_output = false
+scroll_on_keystroke = true
+audible_bell = false
+mouse_autohide = true
+allow_bold = true
+dynamic_title = true
+urgent_on_bell = true
+clickable_url = true
+scrollback_lines = 10000
+search_wrap = true
+font = Office Code Pro Medium 11
+cursor_blink = system
+cursor_shape = block
+size_hints = true
+
+[colors]
+# special
+foreground      = #888888
+foreground_bold = #aaaaaa
+background      = #090909
+# black
+color0  = #1f1f1f
+color8  = #4d4d4d
+# red
+color1  = #992e2e
+color9  = #e65c5c
+# green
+color2  = #63992e
+color10 = #a1e65c
+# yellow
+color3  = #997e2e
+color11 = #e6c35c
+# blue
+color4  = #2e5b99
+color12 = #5c96e6
+# magenta
+color5  = #992e75
+color13 = #e65cb8
+# cyan
+color6  = #2e9987
+color14 = #5ce6cf
+# white
+color7  = #e6e6e6
+color15 = #808080
+
+# vim: ft=dosini cms=#%s
+

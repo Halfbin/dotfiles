@@ -1,0 +1,150 @@
+# output configuration #########################################################
+
+set $mon_left DVI-I-1
+set $mon_right HDMI-A-1
+output $mon_left resolution 1920x1080 position 0,0
+output $mon_right resolution 1920x1080 position 1920,0
+seamless_mouse on
+
+for_window [class="^TermiteFloating$"] floating enable
+
+workspace 0 output $mon_left
+workspace 1 output $mon_left
+workspace 2 output $mon_left
+workspace 3 output $mon_left
+workspace 4 output $mon_left
+workspace 5 output $mon_left
+workspace 6 output $mon_left
+workspace 7 output $mon_right
+workspace 8 output $mon_right
+workspace 9 output $mon_right
+workspace 10 output $mon_right
+
+# customization ################################################################
+
+# TODO: make path a symlink
+output * background /usr/share/sway/wallpaper.jpg fill
+
+set $white  #b8b8c8
+set $black  #09090d
+set $dgray  #353540
+set $yellow #b28c55
+set $red    #b26f7a
+
+# client.focused          $yellow  $yellow  $white $white
+# client.focused_inactive $dgray   $dgray   $white $white
+# client.unfocused        $black   $black   $white $white
+# client.urgent           $red     $red     $white $white
+# client.placeholder      $yellow  $black   $black $black
+
+font pango:Office Code Pro 11
+
+# new_window pixel 2
+# new_float  pixel 2
+
+# key bindings #################################################################
+
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $mod Mod1
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+e exit
+bindsym $mod+f fullscreen
+
+floating_modifier $mod
+bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+space floating toggle
+
+bindsym $mod+$left        focus left
+bindsym $mod+$down        focus down
+bindsym $mod+$up          focus up
+bindsym $mod+$right       focus right
+bindsym $mod+Shift+$left  move  left
+bindsym $mod+Shift+$down  move  down
+bindsym $mod+Shift+$up    move  up
+bindsym $mod+Shift+$right move  right
+
+bindsym $mod+b split h
+bindsym $mod+v split v
+bindsym $mod+e layout toggle split
+
+bindsym $mod+a focus parent
+bindsym $mod+d focus child
+
+# mpd control
+bindsym $mod+control+N exec mpc volume -5
+bindsym $mod+control+M exec mpc volume +5
+bindsym $mod+control+I exec mpc play
+bindsym $mod+control+P exec mpc toggle
+bindsym $mod+control+U exec mpc stop
+bindsym $mod+control+K exec mpc prev
+bindsym $mod+control+J exec mpc next
+bindsym $mod+control+H exec mpc seek -10
+bindsym $mod+control+L exec mpc seek +10
+
+bindsym $mod+Return       exec termite
+bindsym $mod+Shift+Return exec termite --class "TermiteFloating"
+bindsym Super_L           exec dmenu_run -fn OfficeCodePro-11
+
+bindsym $mod+grave workspace 0
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+bindsym $mod+Shift+grave move container to workspace 0
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+mode "resize" {
+        bindsym $left resize shrink width 10 px or 10 ppt
+        bindsym $up resize grow height 10 px or 10 ppt
+        bindsym $down resize shrink height 10 px or 10 ppt
+        bindsym $right resize grow width 10 px or 10 ppt
+
+        bindsym $mod+r mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+bar {
+  status_command i3status
+  position top
+  tray_output primary
+
+  colors {
+    background $black
+    statusline $white
+    separator  $dgray
+    focused_workspace  $yellow  $yellow  $black
+    active_workspace   $yellow  $yellow  $black
+    inactive_workspace $black   $black   $dgray
+    urgent_workspace   $red     $red     $black
+  }
+}
+
+exec pasystray
+
+assign [class="^Skype$"] 10
+exec skype
+
+for_window [class="^Pavucontrol$"] floating enable
+

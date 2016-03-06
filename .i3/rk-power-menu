@@ -1,0 +1,5 @@
+#!/usr/bin/fish
+
+set opts poweroff reboot hibernate suspend "i3 exit" "i3 reload" "i3 restart"
+eval (for opt in $opts; echo $opt; end | dmenu -l 10 -fn "OfficeCodePro-11:weight=medium")
+
