@@ -1,0 +1,21 @@
+[submodule ".vim/vim-pathogen"]
+	path = .vim/vim-pathogen
+	url = http://github.com/tpope/vim-pathogen.git
+[submodule ".vim/bundle/vim-airline"]
+	path = .vim/bundle/vim-airline
+	url = http://github.com/bling/vim-airline
+[submodule ".vim/bundle/vim-capslock"]
+	path = .vim/bundle/vim-capslock
+	url = http://github.com/tpope/vim-capslock.git
+[submodule ".vim/bundle/vim-fugitive"]
+	path = .vim/bundle/vim-fugitive
+	url = http://github.com/tpope/vim-fugitive
+[submodule ".vim/bundle/vim-noctu"]
+	path = .vim/bundle/vim-noctu
+	url = http://github.com/noahfrederick/vim-noctu.git
+[submodule ".vim/bundle/vim-fish"]
+	path = .vim/bundle/vim-fish
+	url = http://github.com/dag/vim-fish.git
+[submodule ".vim/bundle/i3-vim-syntax"]
+	path = .vim/bundle/i3-vim-syntax
+	url = http://github.com/PotatoesMaster/i3-vim-syntax
