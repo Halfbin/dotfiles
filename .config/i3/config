@@ -1,11 +1,11 @@
-set $white #b8b8c8
-set $black #09090d
-set $dgray #353540
-set $yellow #b28c55
-set $red    #b26f7a
+set $white #e6e6e6
+set $black #090909
+set $dgray #4d4d4d
+set $yellow #e6c35c
+set $red    #e65c5c
 
-client.focused          $yellow  $yellow  $white $white
-client.focused_inactive $dgray   $dgray   $white $white
+client.focused          $yellow  $yellow  $black $white
+client.focused_inactive $black   $black   $white $white
 client.unfocused        $black   $black   $white $white
 client.urgent           $red     $red     $white $white
 client.placeholder      $yellow  $black   $black $black
@@ -22,9 +22,11 @@ font pango:Office Code Pro Bold 11
 
 new_window pixel 2
 new_float  pixel 2
-# hide_edge_borders both
+hide_edge_borders vertical
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
+force_display_urgency_hint 1000 ms
+focus_on_window_activation smart
 
 # mpd control
 bindsym $mod+control+N exec mpc volume -5
@@ -38,11 +40,12 @@ bindsym $mod+control+H exec mpc seek -10
 bindsym $mod+control+L exec mpc seek +10
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return       exec termite
 bindsym $mod+Shift+Return exec termite -r "pop-up"
 
 bindsym $mod+Shift+q kill
-bindsym Super_L exec rk-app-menu
+bindsym Super_L      exec rk-app-menu
+bindsym $mod+Super_L exec rk-power-menu
 
 bindsym $mod+$left  focus left
 bindsym $mod+$down  focus down
@@ -54,19 +57,37 @@ bindsym $mod+Shift+$down  move down
 bindsym $mod+Shift+$up    move up
 bindsym $mod+Shift+$right move right
 
-bindsym $mod+b split h
-bindsym $mod+v split v
-
 bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+space floating toggle
-
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+v split toggle
 
 bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 bindsym $mod+d focus child
+
+mode "resize" {
+  bindsym $left  resize shrink width
+  bindsym $up    resize grow   height
+  bindsym $down  resize shrink height
+  bindsym $right resize grow   width
+
+  bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+mode "layout" {
+  bindsym s layout stacking
+  bindsym w layout tabbed
+  bindsym e layout toggle split
+  bindsym v split toggle
+  bindsym a focus parent
+  bindsym d focus child
+
+  bindsym Escape mode "default"
+}
+
+bindsym $mod+e mode "layout"
 
 # amd
 set $mon_left DVI-I-1
@@ -108,21 +129,6 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# power and i3 options
-bindsym $mod+Shift+e exec rk-power-menu
-
-mode "resize" {
-        bindsym $left resize shrink width 10 px or 10 ppt
-        bindsym $up resize grow height 10 px or 10 ppt
-        bindsym $down resize shrink height 10 px or 10 ppt
-        bindsym $right resize grow width 10 px or 10 ppt
-
-        bindsym $mod+r mode "default"
-        bindsym Escape mode "default"
-}
-
-bindsym $mod+r mode "resize"
-
 bar {
   status_command i3status
   position top
@@ -133,7 +139,7 @@ bar {
     statusline $white
     separator  $dgray
     focused_workspace  $yellow  $yellow  $black
-    active_workspace   $yellow  $yellow  $black
+    active_workspace   $dgray   $dgray   $black
     inactive_workspace $black   $black   $dgray
     urgent_workspace   $red     $red     $black
   }
