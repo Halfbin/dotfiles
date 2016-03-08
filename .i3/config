@@ -126,7 +126,7 @@ bindsym $mod+r mode "resize"
 bar {
   status_command i3status
   position top
-  tray_output primary
+  tray_output $mon_left
 
   colors {
     background $black
