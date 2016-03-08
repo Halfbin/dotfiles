@@ -1,5 +1,3 @@
-set nocompatible
-
 execute pathogen#infect ()
 
 let g:airline_powerline_fonts = 1
@@ -10,7 +8,6 @@ let g:airline_symbols.space = "\ua0"
 
 let g:airline#extensions#tabline#enabled = 1
 
-set encoding=utf-8
 filetype plugin indent on
 
 syntax on
@@ -18,28 +15,21 @@ colorscheme noctu
 
 set laststatus=2
 set showcmd
-set modeline
 set modelines=3
-set number
-set numberwidth=5
-" set relativenumber
+set number numberwidth=5
+set scrolloff=8
 
-set foldmethod=manual
-set nofoldenable
+set foldmethod=manual nofoldenable
 
-set expandtab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set autoindent
-set shiftround
+set expandtab tabstop=2
+set shiftwidth=0 shiftround
 
 set ignorecase smartcase
 
-set scrolloff=5
+set hidden
 
-set nobackup
-set nowritebackup
-set autoread
-set directory=~/.vimtmp,/var/tmp
+set backupdir=~/.local/share/nvim/backup
+set directory=~/.cache/nvim/swap
+
+tnoremap <Esc> <C-\><C-n>
 

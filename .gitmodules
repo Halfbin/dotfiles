@@ -1,24 +1,24 @@
-[submodule ".vim/vim-pathogen"]
-	path = .vim/vim-pathogen
-	url = http://github.com/tpope/vim-pathogen.git
-[submodule ".vim/bundle/vim-airline"]
-	path = .vim/bundle/vim-airline
+[submodule ".config/nvim/bundle/vim-airline"]
+	path = .config/nvim/bundle/vim-airline
 	url = http://github.com/bling/vim-airline
-[submodule ".vim/bundle/vim-capslock"]
-	path = .vim/bundle/vim-capslock
+[submodule ".config/nvim/bundle/vim-capslock"]
+	path = .config/nvim/bundle/vim-capslock
 	url = http://github.com/tpope/vim-capslock.git
-[submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
+[submodule ".config/nvim/bundle/vim-fugitive"]
+	path = .config/nvim/bundle/vim-fugitive
 	url = http://github.com/tpope/vim-fugitive
-[submodule ".vim/bundle/vim-noctu"]
-	path = .vim/bundle/vim-noctu
+[submodule ".config/nvim/bundle/vim-noctu"]
+	path = .config/nvim/bundle/vim-noctu
 	url = http://github.com/noahfrederick/vim-noctu.git
-[submodule ".vim/bundle/vim-fish"]
-	path = .vim/bundle/vim-fish
+[submodule ".config/nvim/bundle/vim-fish"]
+	path = .config/nvim/bundle/vim-fish
 	url = http://github.com/dag/vim-fish.git
-[submodule ".vim/bundle/i3-vim-syntax"]
-	path = .vim/bundle/i3-vim-syntax
+[submodule ".config/nvim/bundle/i3-vim-syntax"]
+	path = .config/nvim/bundle/i3-vim-syntax
 	url = http://github.com/PotatoesMaster/i3-vim-syntax
-[submodule ".vim/bundle/YouCompleteMe"]
-	path = .vim/bundle/YouCompleteMe
+[submodule ".config/nvim/bundle/YouCompleteMe"]
+	path = .config/nvim/bundle/YouCompleteMe
 	url = http://github.com/Valloric/YouCompleteMe.git
+[submodule ".config/nvim/vim-pathogen"]
+	path = .config/nvim/vim-pathogen
+	url = http://github.com/tpope/vim-pathogen.git
