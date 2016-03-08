@@ -11,7 +11,6 @@ client.urgent           $red     $red     $white $white
 client.placeholder      $yellow  $black   $black $black
 
 set $mod Mod1
-# Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 set $left h
@@ -43,7 +42,7 @@ bindsym $mod+Return exec termite
 bindsym $mod+Shift+Return exec termite -r "pop-up"
 
 bindsym $mod+Shift+q kill
-bindsym Super_L exec dmenu_run -fn OfficeCodePro-11
+bindsym Super_L exec rk-app-menu
 
 bindsym $mod+$left  focus left
 bindsym $mod+$down  focus down
@@ -110,7 +109,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # power and i3 options
-bindsym $mod+Shift+e exec ~/dotfiles/i3/rk-power-menu
+bindsym $mod+Shift+e exec rk-power-menu
 
 mode "resize" {
         bindsym $left resize shrink width 10 px or 10 ppt

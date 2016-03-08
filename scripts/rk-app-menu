@@ -1,0 +1,4 @@
+#!/usr/bin/fish
+set command (dmenu_path | dmenu)
+eval exec $command
+
