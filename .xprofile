@@ -1,2 +1,0 @@
-compton --vsync opengl-swc &
-
