@@ -89,6 +89,23 @@ mode "layout" {
 
 bindsym $mod+e mode "layout"
 
+# amd
+set $mon_left DVI-I-1
+set $mon_right HDMI-A-0
+
+workspace 0 output $mon_left
+workspace 1 output $mon_left
+workspace 2 output $mon_left
+workspace 3 output $mon_left
+workspace 4 output $mon_left
+workspace 5 output $mon_left
+workspace 6 output $mon_left
+workspace 7 output $mon_right
+workspace 8 output $mon_right
+workspace 9 output $mon_right
+workspace 10 output $mon_right
+
+bindsym $mod+grave workspace 0
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
@@ -100,6 +117,7 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
+bindsym $mod+Shift+grave move container to workspace 0
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
 bindsym $mod+Shift+3 move container to workspace 3
