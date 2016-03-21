@@ -101,7 +101,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 bar {
   status_command i3status
   position top
-  tray_output $mon_left
+  tray_output primary
 
   colors {
     background $col_black
