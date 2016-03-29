@@ -9,6 +9,7 @@ let g:airline_symbols.space = "\ua0"
 let g:airline#extensions#tabline#enabled = 1
 
 filetype plugin indent on
+let g:rust_recommended_style = 0
 
 syntax on
 colorscheme noctu
