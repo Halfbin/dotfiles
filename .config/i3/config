@@ -135,5 +135,3 @@ exec skype
 
 for_window [class="^Pavucontrol$"] floating enable
 
-assign [class="^mpv$"] 1
-
