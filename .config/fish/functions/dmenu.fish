@@ -1,3 +1,3 @@
 function dmenu
-	command dmenu -fn "OfficeCodePro-11:weight=medium" $argv
+  command dmenu -fn "OfficeCodePro-11:weight=bold" $argv
 end

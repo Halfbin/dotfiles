@@ -18,7 +18,8 @@ set $down j
 set $up k
 set $right l
 
-font pango:Office Code Pro Bold 11
+# font pango:Office Code Pro Bold 11
+font pango:Signika Regular 11
 
 new_window pixel 2
 new_float  pixel 2
