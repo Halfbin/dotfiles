@@ -128,7 +128,6 @@ bar {
   }
 }
 
-exec rk-set-wallpaper
 exec pasystray
 
 assign [class="^Skype$"] 10

@@ -1,4 +1,0 @@
-#!/usr/bin/fish
-set wallpath ~/pictures/wallpaper/current
-habak -mp 0,0 -hi $wallpath -mp 1920,0 -hi $wallpath
-
