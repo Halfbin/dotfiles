@@ -46,7 +46,6 @@ bindsym $mod+Shift+Return exec termite -r "pop-up"
 
 bindsym $mod+Shift+q kill
 bindsym Super_L      exec rk-app-menu
-bindsym $mod+Super_L exec rk-power-menu
 
 bindsym $mod+$left  focus left
 bindsym $mod+$down  focus down

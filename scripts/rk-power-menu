@@ -1,8 +1,0 @@
-#!/usr/bin/fish
-
-set opts poweroff reboot hibernate suspend "i3 exit" "i3 reload" "i3 restart"
-set command (for opt in $opts; echo $opt; end | dmenu -l 10)
-if contains $command $opts
-  eval $command
-end
-
