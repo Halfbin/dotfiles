@@ -19,7 +19,6 @@ set showcmd
 set modelines=3
 set number numberwidth=5
 set scrolloff=8
-set nowrap
 
 set foldmethod=manual nofoldenable
 
