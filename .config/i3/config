@@ -1,14 +1,14 @@
-set $white #e6e6e6
-set $black #090909
-set $dgray #4d4d4d
-set $yellow #e6c35c
-set $red    #e65c5c
+set $col_white  #fafbfc
+set $col_black  #2a373e
+set $col_dkgrey #5b686f
+set $col_active #00bcd4
+set $col_alert  #ff5252
 
-client.focused          $yellow  $yellow  $black $white
-client.focused_inactive $black   $black   $white $white
-client.unfocused        $black   $black   $white $white
-client.urgent           $red     $red     $white $white
-client.placeholder      $yellow  $black   $black $black
+client.focused          $col_active  $col_active  $col_white  $col_white
+client.focused_inactive $col_black   $col_black   $col_white  $col_white
+client.unfocused        $col_black   $col_black   $col_white  $col_white
+client.urgent           $col_alert   $col_alert   $col_white  $col_white
+client.placeholder      $col_active  $col_black   $col_black  $col_black
 
 set $mod Mod1
 floating_modifier $mod
@@ -135,13 +135,13 @@ bar {
   tray_output $mon_left
 
   colors {
-    background $black
-    statusline $white
-    separator  $dgray
-    focused_workspace  $yellow  $yellow  $black
-    active_workspace   $dgray   $dgray   $black
-    inactive_workspace $black   $black   $dgray
-    urgent_workspace   $red     $red     $black
+    background $col_black
+    statusline $col_white
+    separator  $col_white
+    focused_workspace  $col_active $col_active $col_white
+    active_workspace   $col_black  $col_black  $col_white
+    inactive_workspace $col_black  $col_black  $col_dkgrey
+    urgent_workspace   $col_alert  $col_alert  $col_black
   }
 }
 

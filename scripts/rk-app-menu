@@ -1,4 +1,21 @@
 #!/usr/bin/fish
-set command (dmenu_path | dmenu)
-eval exec $command
+set listfile ~/apps/launcher-list
+set choice (cat $listfile | cut -d":" -f1 | dmenu)
+if [ $status -ne 0 -o -z "$choice" ]
+  exit 1
+end
+
+echo -s "choice:  " $choice
+
+set line (grep "^"$choice $listfile)
+echo -s "line:    " $line
+
+if [ -z "$line" -o $status -ne 0 ]
+  set command $choice
+else
+  set command (echo $line | cut -d":" -f"2-")
+end
+
+echo -s "command: " $command
+eval "exec "$command
 

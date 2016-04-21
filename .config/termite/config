@@ -15,34 +15,43 @@ cursor_shape = block
 size_hints = true
 
 [colors]
-# special
-foreground      = #888888
-foreground_bold = #aaaaaa
-background      = #090909
-# black
-color0  = #1f1f1f
-color8  = #4d4d4d
-# red
-color1  = #992e2e
-color9  = #e65c5c
-# green
-color2  = #63992e
-color10 = #a1e65c
-# yellow
-color3  = #997e2e
-color11 = #e6c35c
-# blue
-color4  = #2e5b99
-color12 = #5c96e6
-# magenta
-color5  = #992e75
-color13 = #e65cb8
-# cyan
-color6  = #2e9987
-color14 = #5ce6cf
-# white
-color7  = #e6e6e6
-color15 = #808080
 
+# special
+foreground      = #babec1
+foreground_bold = #babec1
+cursor          = #babec1
+background      = #151c20
+
+# black
+color0  = #2a373f
+color8  = #546e7a
+
+# red
+color9  = #ff5252
+color1  = #bf3d3d
+
+# green
+color10 = #00e676
+color2  = #00c062
+
+# yellow
+color11 = #ffc107
+color3  = #a77f05
+
+# blue
+color12 = #00bcd4
+color4  = #207b88
+
+# magenta
+color13 = #ff4081
+color5  = #ad1457
+
+# cyan
+color14 = #1de9b6
+color6  = #26a69a
+
+# white
+color7  = #babec1
+color15 = #fafbfc
 # vim: ft=dosini cms=#%s
 

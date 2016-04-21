@@ -27,8 +27,8 @@ function fish_prompt
   end
 
   set prompt_segs "show-prevstat $prev_stat" show-who show-git show-pwd
-  set col_term 09090d
-  set col_bar  202020
+  set col_term 151c20
+  set col_bar  2a373f
 
   set_color normal
   echo
