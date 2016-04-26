@@ -1,7 +1,7 @@
 function fish_prompt
   set prev_stat $status
 
-  set prompt_segs
+  set -g prompt_segs
   function add_seg
     set -g prompt_segs $prompt_segs "$argv"
   end
