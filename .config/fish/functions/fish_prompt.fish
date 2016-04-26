@@ -1,64 +1,58 @@
 function fish_prompt
-	set prev_stat $status
+  set prev_stat $status
 
-  function show-prevstat
-    if [ "$argv[1]" != "0" ]
-      set_color --bold red
-      echo -n "✗ "$argv[1]
-    end
+  set prompt_segs
+  function add_seg
+    set -g prompt_segs $prompt_segs "$argv"
   end
 
-  function show-who
-    set_color --bold magenta
-    echo -n (whoami)'@'(hostname)
+  # whoami
+  add_seg (set_color --bold magenta; echo -n (whoami))
+
+  # previous status
+  if [ "$prev_stat" -ne 0 ]
+    add_seg (set_color --bold red; echo -n "🗙 $prev_stat")
   end
 
-  function show-git
-    set branch (git symbolic-ref --short HEAD 2>/dev/null)
-    if [ "$branch" ]
-      set_color --bold green
-      echo -n " "$branch
-    end
+  # add pwd segments
+  set minipwd (echo -n $PWD | sed "s#^$HOME#~#; s#/#\n#g" | sed "/^\s*\$/d")
+  if [ (count $minipwd) -eq 0 ];
+    set minipwd "/"
   end
 
-  function show-pwd
-    set_color --bold yellow
-    rk-minipwd
+  for pwdseg in $minipwd
+    add_seg (set_color --bold yellow; echo -n $pwdseg)
   end
 
-  set prompt_segs "show-prevstat $prev_stat" show-who show-git show-pwd
+  # git at the end
+  set branch (git symbolic-ref --short HEAD ^/dev/null)
+  if [ "$branch" ]
+    add_seg (set_color --bold green; echo -n "🔀 $branch")
+  end
+
+  # got to match terminal
   set col_term 151c20
   set col_bar  2a373f
 
-  set_color normal
-  echo
+  # newline
+  echo -ns (set_color normal) \n (set_color -b $col_bar)
 
-	set_color -b $col_bar
-  set first_seg 1
-
+  # print segments
+  set first_seg yes
   for seg in $prompt_segs
-    set seg_text (eval $seg)
-    if [ -z "$seg_text" ]
-      continue
+    # print separator
+    if [ -z "$first_seg" ]
+      echo -ns (set_color $col_term) " "
     end
 
-    if [ "$first_seg" != "0" ]
-      echo -n " "
-      set first_seg 0
-    else
-      set_color $col_term
-      echo -n "  "
-    end
-
-    echo -n $seg_text
+    # print text
+    echo -n " $seg"
+    set first_seg
   end
 
-  echo -n " "
-  set_color $col_bar
-  set_color -b $col_term
-  echo -n 
+  # print end
+  echo -ns " " (set_color $col_bar; set_color -b $col_term) 
 
-  set_color normal
-  echo
-  echo -n "  \$ "
+  # prompt
+  echo -s (set_color normal) \n "  ⛬ "
 end
