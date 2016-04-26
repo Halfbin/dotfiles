@@ -29,23 +29,7 @@ for_window [window_role="task_dialog"] floating enable
 force_display_urgency_hint 1000 ms
 focus_on_window_activation smart
 
-# mpd control
-bindsym $mod+control+N exec mpc volume -5
-bindsym $mod+control+M exec mpc volume +5
-bindsym $mod+control+I exec mpc play
-bindsym $mod+control+P exec mpc toggle
-bindsym $mod+control+U exec mpc stop
-bindsym $mod+control+K exec mpc prev
-bindsym $mod+control+J exec mpc next
-bindsym $mod+control+H exec mpc seek -10
-bindsym $mod+control+L exec mpc seek +10
-
-# start a terminal
-bindsym $mod+Return       exec termite
-bindsym $mod+Shift+Return exec termite -r "pop-up"
-
 bindsym $mod+Shift+q kill
-bindsym Super_L      exec rk-app-menu
 
 bindsym $mod+$left  focus left
 bindsym $mod+$down  focus down
@@ -57,13 +41,13 @@ bindsym $mod+Shift+$down  move down
 bindsym $mod+Shift+$up    move up
 bindsym $mod+Shift+$right move right
 
-bindsym $mod+f fullscreen toggle
+bindsym $mod+f           fullscreen toggle
 bindsym $mod+Shift+space floating toggle
-bindsym $mod+v split toggle
+bindsym $mod+v           split toggle
 
 bindsym $mod+space focus mode_toggle
-bindsym $mod+a focus parent
-bindsym $mod+d focus child
+bindsym $mod+a     focus parent
+bindsym $mod+d     focus child
 
 mode "resize" {
   bindsym $left  resize shrink width
@@ -138,12 +122,30 @@ bar {
     background $col_black
     statusline $col_white
     separator  $col_white
-    focused_workspace  $col_active $col_active $col_white
+    focused_workspace  $col_black  $col_black  $col_active
     active_workspace   $col_black  $col_black  $col_white
     inactive_workspace $col_black  $col_black  $col_dkgrey
     urgent_workspace   $col_alert  $col_alert  $col_black
   }
 }
+
+# start a terminal
+bindsym $mod+Return       exec --no-startup-id termite
+bindsym $mod+Shift+Return exec --no-startup-id termite -r "pop-up"
+
+# launcher
+bindsym Super_L exec --no-startup-id rk-app-menu
+
+# mpd control
+bindsym $mod+control+N exec mpc volume -5
+bindsym $mod+control+M exec mpc volume +5
+bindsym $mod+control+I exec mpc play
+bindsym $mod+control+P exec mpc toggle
+bindsym $mod+control+U exec mpc stop
+bindsym $mod+control+K exec mpc prev
+bindsym $mod+control+J exec mpc next
+bindsym $mod+control+H exec mpc seek -10
+bindsym $mod+control+L exec mpc seek +10
 
 exec pasystray
 
