@@ -121,7 +121,7 @@ bar {
   colors {
     background $col_black
     statusline $col_white
-    separator  $col_white
+    separator  $col_black
     focused_workspace  $col_black  $col_black  $col_active
     active_workspace   $col_black  $col_black  $col_white
     inactive_workspace $col_black  $col_black  $col_dkgrey
