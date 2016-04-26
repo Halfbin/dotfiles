@@ -147,10 +147,9 @@ bindsym $mod+control+J exec mpc next
 bindsym $mod+control+H exec mpc seek -10
 bindsym $mod+control+L exec mpc seek +10
 
-exec pasystray
-
 assign [class="^Skype$"] 10
-exec skype
 
 for_window [class="^Pavucontrol$"] floating enable
+
+exec xinitrc
 
