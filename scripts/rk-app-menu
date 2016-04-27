@@ -1,6 +1,6 @@
 #!/usr/bin/fish
 set listfile ~/apps/launcher-list
-set choice (cat $listfile | cut -d":" -f1 | dmenu)
+set choice (cat $listfile | cut -d":" -f1 | dmenu -p "⛬")
 if [ $status -ne 0 -o -z "$choice" ]
   exit 1
 end
