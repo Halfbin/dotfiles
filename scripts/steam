@@ -1,0 +1,3 @@
+#!/usr/bin/fish
+env STEAM_RUNTIME=0 /usr/bin/steam >/dev/null ^/dev/null &
+
