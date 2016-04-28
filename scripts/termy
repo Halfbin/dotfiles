@@ -1,3 +1,3 @@
 #!/usr/bin/fish
-termite -e "env rk_fish_start=\"$argv\" fish" &
+exec termite -e "env rk_fish_start='$argv' fish"
 
