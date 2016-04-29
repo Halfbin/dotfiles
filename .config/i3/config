@@ -29,6 +29,9 @@ for_window [window_role="task_dialog"] floating enable
 force_display_urgency_hint 1000 ms
 focus_on_window_activation smart
 
+bindsym $mod+b border normal 2
+bindsym $mod+n border pixel 2
+
 bindsym $mod+Shift+q kill
 
 bindsym $mod+$left  focus left
