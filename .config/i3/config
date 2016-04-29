@@ -137,7 +137,7 @@ bindsym $mod+Return       exec --no-startup-id termite
 bindsym $mod+Shift+Return exec --no-startup-id termite -r "pop-up"
 
 # launcher
-bindsym Super_L exec --no-startup-id app-menu
+bindsym $mod+semicolon exec --no-startup-id app-menu
 
 # mpd control
 bindsym $mod+control+N exec mpc volume -5
