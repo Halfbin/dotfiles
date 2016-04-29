@@ -4,11 +4,11 @@ set $col_dkgrey #5b686f
 set $col_active #00bcd4
 set $col_alert  #ff5252
 
-client.focused          $col_active  $col_active  $col_white  $col_white
-client.focused_inactive $col_black   $col_black   $col_white  $col_white
-client.unfocused        $col_black   $col_black   $col_white  $col_white
-client.urgent           $col_alert   $col_alert   $col_white  $col_white
-client.placeholder      $col_active  $col_black   $col_black  $col_black
+client.focused          $col_active  $col_active  $col_black  $col_white
+client.focused_inactive $col_black   $col_black   $col_dkgrey $col_black
+client.unfocused        $col_black   $col_black   $col_dkgrey $col_black
+client.urgent           $col_alert   $col_alert   $col_white  $col_alert
+# client.placeholder      $col_active  $col_black   $col_black  $col_black
 
 set $mod Mod1
 floating_modifier $mod
