@@ -27,7 +27,7 @@ function fish_prompt
   # git at the end
   set branch (git symbolic-ref --short HEAD ^/dev/null)
   if [ "$branch" ]
-    add_seg (set_color --bold green; echo -n "🔀 $branch")
+    add_seg (set_color --bold green; echo -n " $branch")
   end
 
   # got to match terminal
