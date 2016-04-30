@@ -1,19 +1,28 @@
 #!/usr/bin/fish
 set listfile ~/apps/launcher-list
-set choice (cat $listfile | cut -d":" -f1 | dmenu -p "⛬")
+
+# strip parameters after ':'
+set choice (cat $listfile | grep -v "^#\|^\s*\$" | cut -d":" -f1 | dmenu -p "⛬") #  -l 20)
 if [ $status -ne 0 -o -z "$choice" ]
   exit 1
 end
 
 echo -s "choice:  " $choice
 
+# find the line in the list
 set line (grep "^"$choice $listfile)
 echo -s "line:    " $line
 
 if [ -z "$line" -o $status -ne 0 ]
+  # not in the list? must be an explicit command
   set command $choice
 else
-  set command (echo $line | cut -d":" -f"2-")
+  # try for a command after ':'
+  set command (echo $line | cut -d":" -f"2-" -s)
+  if [ -z "$command" ]
+    # no ':'? use the name, with any icon stripped off
+    set command (echo $line | sed "s/^[^\s]\s\+//")
+  end
 end
 
 echo -s "command: " $command

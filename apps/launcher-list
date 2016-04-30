@@ -1,21 +1,34 @@
-dropbox
-epsxe
-firefox
-gdmap
-gucharmap
-htop:termy htop
-minecraft
-ncmpcpp:termy ncmpcpp
-nvim:termy nvim
-nitrogen
-pavucontrol
-pcsx2
-pinta
-qbittorrent
-skype
-steam
-stellarium
-termite
-thunar
-undertale
-wotlk
+# format:
+# [icon-char space] name [:real command string]
+
+ firefox
+ nvim:termy nvim
+ thunar
+🎜 ncmpcpp:termy ncmpcpp
+
+ steam
+ minecraft
+U undertale
+W wotlk
+ pcsx2
+
+ gdmap
+🈑 gucharmap
+ htop:termy htop
+🔊 pavucontrol
+ nitrogen
+ pinta
+🌊 qbittorrent
+🌌 stellarium
+
+ skype
+ termite
+ dropbox
+
+🔒 lock:dm-tool lock
+⛄ hibernate:systemctl hibernate
+ logout:i3 exit
+ poweroff
+ reboot
+⏸ suspend:systemctl suspend
+
