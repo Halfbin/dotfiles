@@ -25,6 +25,7 @@ set foldmethod=manual nofoldenable
 
 set expandtab tabstop=2
 set shiftwidth=0 shiftround
+set cinoptions=l1
 
 set ignorecase smartcase
 
