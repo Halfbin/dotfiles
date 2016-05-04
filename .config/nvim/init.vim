@@ -33,6 +33,7 @@ set hidden
 
 set backupdir=~/.local/share/nvim/backup
 set directory=~/.cache/nvim/swap
+set autowrite
 
 tnoremap <Esc> <C-\><C-n>
 
