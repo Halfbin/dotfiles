@@ -11,7 +11,7 @@ scrollback_lines = 10000
 search_wrap = true
 font = Office Code Pro Medium 11
 cursor_blink = system
-cursor_shape = block
+cursor_shape = ibeam
 size_hints = true
 
 [colors]
