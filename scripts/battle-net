@@ -1,0 +1,5 @@
+#!/usr/bin/fish
+set -x WINEPREFIX /wine
+cd "/wine/drive_c/Program Files (x86)/Battle.net"
+./"Battle.net Launcher.exe"
+

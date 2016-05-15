@@ -1,0 +1,6 @@
+#!/usr/bin/fish
+set -x WINEPREFIX ~/.wine32
+set -x WINEARCH win32
+set -x GALLIUM_MSAA 4
+~/apps/DeusEx/System/deusex.exe
+

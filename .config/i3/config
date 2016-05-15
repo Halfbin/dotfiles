@@ -153,6 +153,7 @@ bindsym $mod+control+L exec mpc seek +10
 assign [class="^Skype$"] 10
 
 for_window [class="^Pavucontrol$"] floating enable
+for_window [class="^Battle.net.exe$"] floating enable
 
 exec xinitrc
 
