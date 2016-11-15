@@ -1,9 +1,6 @@
 [submodule ".config/nvim/bundle/vim-airline"]
 	path = .config/nvim/bundle/vim-airline
 	url = http://github.com/bling/vim-airline
-[submodule ".config/nvim/bundle/vim-fugitive"]
-	path = .config/nvim/bundle/vim-fugitive
-	url = http://github.com/tpope/vim-fugitive
 [submodule ".config/nvim/bundle/vim-noctu"]
 	path = .config/nvim/bundle/vim-noctu
 	url = http://github.com/noahfrederick/vim-noctu.git
