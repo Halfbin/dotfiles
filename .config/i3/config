@@ -150,10 +150,14 @@ bindsym $mod+control+J exec mpc next
 bindsym $mod+control+H exec mpc seek -10
 bindsym $mod+control+L exec mpc seek +10
 
-assign [class="^Skype$"] 10
+assign [class="^skypeforlinux$"] 10
 
 for_window [class="^Pavucontrol$"] floating enable
 for_window [class="^Battle.net.exe$"] floating enable
+
+# eve
+# assign [title="EVE"] 3
+# for_window [title="EVE"] floating disable
 
 exec xinitrc
 
