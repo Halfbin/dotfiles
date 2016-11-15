@@ -9,9 +9,9 @@ urgent_on_bell = true
 clickable_url = true
 scrollback_lines = 10000
 search_wrap = true
-font = Office Code Pro Medium 11
+font = Office Code Pro Medium 12
 cursor_blink = system
-cursor_shape = ibeam
+cursor_shape = block
 size_hints = true
 
 [colors]
@@ -19,7 +19,7 @@ size_hints = true
 # special
 foreground      = #babec1
 foreground_bold = #babec1
-cursor          = #babec1
+cursor          = #546e7a
 background      = #151c20
 
 # black
