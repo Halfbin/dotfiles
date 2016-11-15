@@ -1,5 +1,5 @@
 if status -l
-  if [ ! -x $DISPLAY ]
+  if [ -n "$DISPLAY" ]
     xprofile
   end
 end
@@ -9,7 +9,7 @@ if not status -l
   set runny $rk_fish_start
   set -u rk_fish_start
   if [ -n "$runny" ]
-    fish -c "exec $runny"
+    fish -ic "exec $runny"
   end
 end
 

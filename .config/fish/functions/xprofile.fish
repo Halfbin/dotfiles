@@ -1,4 +1,5 @@
 function xprofile
-	compton -b
+  # compton -b dodgy
+  compton &
   nitrogen --restore &
 end
